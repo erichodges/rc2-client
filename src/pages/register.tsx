@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Register() {
   return (
-    <div>
+    <div className="flex">
       <Head>
         <title>Register</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,7 +13,7 @@ export default function Register() {
         style={{ backgroundImage: "url('images/bg.jpg')" }}
       ></div>
       <div className="flex flex-col justify-center pl-6">
-        <h1 className="text-lgmb-2">sign up</h1>
+        <h1 className="mb-2 text-lg">Sign Up</h1>
       </div>
     </div>
   );
