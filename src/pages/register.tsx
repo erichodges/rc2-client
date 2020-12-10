@@ -11,7 +11,7 @@ export default function Register() {
       </Head>
 
       <div
-        className="w-40 h-screen bg-center bg-cover"
+        className="h-screen bg-center bg-cover w-36"
         style={{ backgroundImage: "url('images/bg.jpg')" }}
       ></div>
       <div className="flex flex-col justify-center pl-6">
