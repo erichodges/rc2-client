@@ -5,6 +5,10 @@ module.exports = {
     fontFamily: {
       body: ["IBM Plex Sans"],
     },
+    corePlugins: {
+      // ...
+      borderWidth: true,
+    },
     extend: {
       colors: {
         blue: {
@@ -21,6 +25,15 @@ module.exports = {
       },
       spacing: {
         70: "17.5rem",
+      },
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "2",
+        3: "3",
+        4: "4",
+        5: "5",
+        6: "6",
       },
     },
   },
