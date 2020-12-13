@@ -82,6 +82,9 @@ export default function Register() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
+              <small className="font-medium text-red-600">
+                {errors.username}
+              </small>
             </div>
             <div className="mb-2">
               <input
@@ -94,6 +97,9 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <small className="font-medium text-red-600">
+                {errors.password}
+              </small>
             </div>
             <button className="w-full py-2 mb-4 text-xs font-bold text-white uppercase bg-blue-500 border border-blue-500 rounded">
               Sign Up
