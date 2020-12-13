@@ -15,7 +15,7 @@ export default function Register() {
     event.preventDefault();
 
     try {
-      const res = Axios.post("/auth/register", {
+      const res = await Axios.post("/auth/register", {
         email,
         password,
         username,
@@ -61,18 +61,22 @@ export default function Register() {
             <div className="mb-2">
               <input
                 type="email"
-                className="w-full p-3 transition duration-200 border-gray-300 rounded outline-none border-opacity-1 bg-gray-50 focus:bg-white hover:bg-white "
+                className={classNames(
+                  "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
+                  { "border-red-500": errors.email }
+                )}
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              <small className="font-medium text-red-600">{errors.email}</small>
             </div>
             <div className="mb-2">
               <input
                 type="text"
                 className={classNames(
                   "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
-                  { "border-red-500": errors.email }
+                  { "border-red-500": errors.username }
                 )}
                 placeholder="Username"
                 value={username}
@@ -82,7 +86,10 @@ export default function Register() {
             <div className="mb-2">
               <input
                 type="password"
-                className="w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white"
+                className={classNames(
+                  "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
+                  { "border-red-500": errors.password }
+                )}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
