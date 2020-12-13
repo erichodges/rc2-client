@@ -18,9 +18,9 @@ const InputGroup: React.FC<InputGroupProps> = ({
   setValue,
 }) => {
   return (
-    <div className="className">
+    <div className={className}>
       <input
-        type="text"
+        type={type}
         className={classNames(
           "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
           { "border-red-500": error }
