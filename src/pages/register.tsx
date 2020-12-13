@@ -1,8 +1,8 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Axios from "axios";
-import classNames from "classnames";
+import InputGroup from "../components/InputGroup";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -34,7 +34,6 @@ export default function Register() {
         <title>Register</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <div
         className="h-screen bg-center bg-cover w-36"
         style={{ backgroundImage: "url('images/bg.jpg')" }}
@@ -58,49 +57,30 @@ export default function Register() {
                 I agree to get emails about cool stuff on Readit
               </label>
             </div>
-            <div className="mb-2">
-              <input
-                type="email"
-                className={classNames(
-                  "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
-                  { "border-red-500": errors.email }
-                )}
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <small className="font-medium text-red-600">{errors.email}</small>
-            </div>
-            <div className="mb-2">
-              <input
-                type="text"
-                className={classNames(
-                  "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
-                  { "border-red-500": errors.username }
-                )}
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <small className="font-medium text-red-600">
-                {errors.username}
-              </small>
-            </div>
-            <div className="mb-2">
-              <input
-                type="password"
-                className={classNames(
-                  "w-full p-3 transition duration-200 border-gray-300 rounded outline-none bg-gray-50 focus:bg-white hover:bg-white",
-                  { "border-red-500": errors.password }
-                )}
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <small className="font-medium text-red-600">
-                {errors.password}
-              </small>
-            </div>
+            <InputGroup
+              className="mb-2"
+              type="email"
+              value={email}
+              setValue={setEmail}
+              placeholder="Email"
+              error={errors.email}
+            />
+            <InputGroup
+              className="mb-2"
+              type="text"
+              value={username}
+              setValue={setUsername}
+              placeholder="Username"
+              error={errors.username}
+            />
+            <InputGroup
+              className="mb-4"
+              type="password"
+              value={password}
+              setValue={setPassword}
+              placeholder="Password"
+              error={errors.password}
+            />
             <button className="w-full py-2 mb-4 text-xs font-bold text-white uppercase bg-blue-500 border border-blue-500 rounded">
               Sign Up
             </button>
