@@ -27,6 +27,7 @@ module.exports = {
         70: "17.5rem",
         160: "40rem",
       },
+      container: false,
       borderWidth: {
         DEFAULT: "1px",
         0: "0",
@@ -41,5 +42,18 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        ".container": {
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          "@screen sm": { maxWidth: "640px" },
+          "@screen md": { maxWidth: "768" },
+          "@screen lg": { maxWidth: "975" },
+        },
+      });
+    },
+  ],
 };
