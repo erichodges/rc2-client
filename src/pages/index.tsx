@@ -2,7 +2,12 @@ import { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
 import Head from "next/head";
 import Link from "next/link";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 import { Post } from "../types";
+
+dayjs.extend(relativeTime);
 
 export default function Home() {
   const [posts, setposts] = useState<Post[]>([]);
@@ -41,6 +46,20 @@ export default function Home() {
                       </a>
                     </Fragment>
                   </Link>
+                  <p className="text-xs text-gray-500">
+                    <span className="mx-1">·</span>
+                    Posted by
+                    <Link href={`/u/user`}>
+                      <a className="mx-1 hover:underline">/u/user</a>
+                    </Link>
+                    <Link
+                      href={`/r/${post.subName}/${post.identifier}/${post.slug}`}
+                    >
+                      <a className="mx-1 hover:underline">
+                        {dayjs(post.createdAt).fromNow()}
+                      </a>
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>
