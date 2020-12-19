@@ -31,14 +31,14 @@ export default function Home() {
                 <div className="flex items-center">
                   <Link href={`/r/${post.subName}`}>
                     <Fragment>
-                    <img
-                      src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                      alt="gravatar-placeholder"
-                      className="w-6 h-6 mr-1 rounded-full cursor-pointer
-                    />
-                    <a className="text-xs font-bold cursor-pointer hover:underline">
-                      /r/{post.subName}
-                    </a>
+                      <img
+                        src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                        alt="gravatar-placeholder"
+                        className="w-6 h-6 mr-1 rounded-full cursor-pointer"
+                      />
+                      <a className="text-xs font-bold cursor-pointer hover:underline">
+                        /r/{post.subName}
+                      </a>
                     </Fragment>
                   </Link>
                 </div>

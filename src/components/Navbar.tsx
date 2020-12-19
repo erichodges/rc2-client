@@ -3,10 +3,7 @@ import Link from "next/link";
 import RedditLogo from "../images/reddit-logo.svg";
 
 const Navbar: React.FC = () => (
-  <div
-    className="fixed inset-x-0 top-0 z-10 flex items-center justify-center h-12 bg-white"
-    px-5
-  >
+  <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-center h-12 px-5 bg-white">
     {/* Logo and title */}
     <div className="flex items-center div">
       <Link href="/">

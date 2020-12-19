@@ -40,7 +40,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textDecoration: ["active"],
+    },
   },
   plugins: [
     function ({ addComponents }) {
