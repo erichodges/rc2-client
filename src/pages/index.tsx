@@ -5,7 +5,7 @@ import Head from "next/head";
 import dayjs from "dayjs";
 
 import { Post } from "../types";
-import relativeTime from "dayjs/locale/*";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 
