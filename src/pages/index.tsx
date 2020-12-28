@@ -5,6 +5,7 @@ import Head from "next/head";
 import dayjs from "dayjs";
 
 import { Post } from "../types";
+import PostCard from "../components/PostCard";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
@@ -18,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mt-12">
+    <div className="pt-12">
       <Head>
         <title>Readit: The front page of the internet</title>
       </Head>
@@ -26,8 +27,8 @@ export default function Home() {
         {/* Posts feed */}
         <div className="w-160">
           {posts.map((post) => (
-
-          )}
+            <PostCard post={post} key={post.identifier} />
+          ))}
         </div>
       </div>
     </div>

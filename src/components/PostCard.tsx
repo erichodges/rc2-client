@@ -50,31 +50,31 @@ export default function PostCard({
       console.log(err);
     }
   };
+
   return (
     <div key={identifier} className="flex mb-4 bg-white rounded">
       {/* Vote Section */}
       <div className="w-10 py-3 text-center bg-gray-200 rounded-l">
-       {/* Upvote */}
-       <div
-        className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:br-gray-300 hover:text-red-500"
-        onClick={() => vote(1)}
-       >
-         <i
-         className={classNames('icon-arror-up', {
-           'text-red-500': userVote === 1
-         })}
-         ></i>
-       </div>
-       <p className="font-bold vext-xs">{voteScore}</p>
-       {/* Downvote */}
-       <div
-        className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600 onClick={() => vote(-1)}"
+        {/* Upvote */}
+        <div
+          className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:br-gray-300 hover:text-red-500"
+          onClick={() => vote(1)}
         >
-         <i
-          className={classNames('icon-arrow-down', {
-            'text-blue-600': userVote === -1,
-          })}
+          <i
+            className={classNames("icon-arror-up", {
+              "text-red-500": userVote === 1,
+            })}
           ></i>
+        </div>
+        <p className="font-bold vext-xs">{voteScore}</p>
+        {/* Downvote */}
+        <div className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600 onClick={() => vote(-1)}">
+          <i
+            className={classNames("icon-arrow-down", {
+              "text-blue-600": userVote === -1,
+            })}
+          ></i>
+        </div>
       </div>
       {/* Post data section */}
       <div className="w-full p-2">
@@ -108,23 +108,30 @@ export default function PostCard({
           <a className="my-1 text-lg font-medium">{title}</a>
         </Link>
         {body && <p className="my-1 text-sm">{body}</p>}
+
         <div className="flex">
           <Link href={url}>
             <a>
-              <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
-                <i className="mr-1 fas fa-comment-alt fa-xs"></i>
-                <span className="font-bold">20 comments</span>
-              </div>
+              <ActionButton>
+                <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
+                  <i className="mr-1 fas fa-comment-alt fa-xs"></i>
+                  <span className="font-bold">20 comments</span>
+                </div>
+              </ActionButton>
             </a>
           </Link>
-          <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
-            <i className="mr-1 fas fa-share fa-xs"></i>
-            <span className="font-bold">Share</span>
-          </div>
-          <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
-            <i className="mr-1 fas fa-bookmark fa-xs"></i>
-            <span className="font-bold">Save</span>
-          </div>
+          <ActionButton>
+            <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
+              <i className="mr-1 fas fa-share fa-xs"></i>
+              <span className="font-bold">Share</span>
+            </div>
+          </ActionButton>
+          <ActionButton>
+            <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
+              <i className="mr-1 fas fa-bookmark fa-xs"></i>
+              <span className="font-bold">Save</span>
+            </div>
+          </ActionButton>
         </div>
       </div>
     </div>
