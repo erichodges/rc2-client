@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import classNames from "classnames";
 
-import axios from "axios";
 import { Post } from "../types";
 import Axios from "axios";
 
@@ -51,6 +50,7 @@ export default function PostCard({
     }
   };
 
+  console.log("voteScore: ", voteScore);
   return (
     <div key={identifier} className="flex mb-4 bg-white rounded">
       {/* Vote Section */}
@@ -66,9 +66,12 @@ export default function PostCard({
             })}
           ></i>
         </div>
-        <p className="font-bold vext-xs">{voteScore}</p>
+        <p className="text-xs font-bold">{voteScore}</p>
         {/* Downvote */}
-        <div className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600 onClick={() => vote(-1)}">
+        <div
+          className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-blue-600"
+          onClick={() => vote(-1)}
+        >
           <i
             className={classNames("icon-arrow-down", {
               "text-blue-600": userVote === -1,
