@@ -2,10 +2,11 @@ import { AppProps } from "next/app";
 import Axios from "axios";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
-import Navbar from "../components/Navbar";
 
 import "../styles/tailwind.css";
 import "../styles/icons.css";
+
+import Navbar from "../components/Navbar";
 
 Axios.defaults.baseURL = "http://localhost:5000/api";
 Axios.defaults.withCredentials = true;

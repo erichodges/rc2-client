@@ -1,5 +1,5 @@
-import { Fragment } from "react";
 import Link from "next/link";
+import { Fragment } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import classNames from "classnames";
@@ -11,7 +11,7 @@ dayjs.extend(relativeTime);
 
 const ActionButton = ({ children }) => {
   return (
-    <div className="px-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
+    <div className="px-1 py-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
       {children}
     </div>
   );
@@ -50,14 +50,13 @@ export default function PostCard({
     }
   };
 
-  console.log("voteScore: ", { voteScore });
   return (
     <div key={identifier} className="flex mb-4 bg-white rounded">
-      {/* Vote Section */}
+      {/* Vote section */}
       <div className="w-10 py-3 text-center bg-gray-200 rounded-l">
         {/* Upvote */}
         <div
-          className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:br-gray-300 hover:text-red-500"
+          className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-red-500"
           onClick={() => vote(1)}
         >
           <i
@@ -86,19 +85,18 @@ export default function PostCard({
             <Fragment>
               <img
                 src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                alt="gravatar-placeholder"
                 className="w-6 h-6 mr-1 rounded-full cursor-pointer"
               />
               <a className="text-xs font-bold cursor-pointer hover:underline">
-                r/{subName}
+                /r/{subName}
               </a>
             </Fragment>
           </Link>
           <p className="text-xs text-gray-500">
             <span className="mx-1">•</span>
             Posted by
-            <Link href={`u/${username}`}>
-              <a className="mx-1 hover:underline">u/{username}</a>
+            <Link href={`/u/${username}`}>
+              <a className="mx-1 hover:underline">/u/{username}</a>
             </Link>
             <Link href={url}>
               <a className="mx-1 hover:underline">
@@ -117,7 +115,7 @@ export default function PostCard({
             <a>
               <ActionButton>
                 <i className="mr-1 fas fa-comment-alt fa-xs"></i>
-                <span className="font-bold">{commentCount} comments</span>
+                <span className="font-bold">{commentCount} Comments</span>
               </ActionButton>
             </a>
           </Link>
@@ -134,3 +132,5 @@ export default function PostCard({
     </div>
   );
 }
+
+// https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png
