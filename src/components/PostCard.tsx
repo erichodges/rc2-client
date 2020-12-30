@@ -61,7 +61,7 @@ export default function PostCard({
         >
           <i
             className={classNames("icon-arrow-up", {
-              "text-red-500": userVote === 1,
+              "text-blue-600": userVote === 1,
             })}
           ></i>
         </div>
@@ -73,7 +73,7 @@ export default function PostCard({
         >
           <i
             className={classNames("icon-arrow-down", {
-              "text-blue-600": userVote === -1,
+              "text-red-500": userVote === -1,
             })}
           ></i>
         </div>
@@ -132,5 +132,3 @@ export default function PostCard({
     </div>
   );
 }
-
-// https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png
