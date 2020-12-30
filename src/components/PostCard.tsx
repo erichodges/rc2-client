@@ -11,7 +11,7 @@ dayjs.extend(relativeTime);
 
 const ActionButton = ({ children }) => {
   return (
-    <div className="px-1 mr-1 text-xs rounded cursor-pointer text-ray-400 hover:bg-gray-200">
+    <div className="px-1 mr-1 text-xs text-gray-400 rounded cursor-pointer hover:bg-gray-200">
       {children}
     </div>
   );
@@ -50,7 +50,7 @@ export default function PostCard({
     }
   };
 
-  console.log("voteScore: ", voteScore);
+  console.log("voteScore: ", { voteScore });
   return (
     <div key={identifier} className="flex mb-4 bg-white rounded">
       {/* Vote Section */}
