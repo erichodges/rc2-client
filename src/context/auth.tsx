@@ -21,7 +21,7 @@ const StateContext = createContext<State>({
 
 const DispatchContext = createContext(null);
 
-const reducer = (state: StateContext, { type, payload }: Action) => {
+const reducer = (state: typeof StateContext, { type, payload }: Action) => {
   switch (type) {
     case "LOGIN":
       return {
