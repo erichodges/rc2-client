@@ -2,9 +2,10 @@ import { FormEvent, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Axios from "axios";
-import InputGroup from "../components/InputGroup";
 import { useRouter } from "next/router";
-import { useAuthDispatch } from "../context/auth";
+import { useAuthDispatch, useAuthState } from "../context/auth";
+
+import InputGroup from "../components/InputGroup";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -12,7 +13,10 @@ export default function Register() {
   const [errors, setErrors] = useState<any>({});
 
   const dispatch = useAuthDispatch();
+  const { authenticated } = useAuthState();
+
   const router = useRouter();
+  if (authenticated) router.push("/");
 
   const submitForm = async (event: FormEvent) => {
     event.preventDefault();
