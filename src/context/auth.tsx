@@ -41,7 +41,7 @@ const reducer = (state: typeof StateContext, { type, payload }: Action) => {
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, defaultDispatch] = useReducer(reducer, {
     user: null,
-    authentiacted: false,
+    authenticated: false,
     loading: true,
   });
 
