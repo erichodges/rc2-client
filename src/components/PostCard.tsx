@@ -78,19 +78,20 @@ export default function PostCard({
           ></i>
         </div>
       </div>
+      {/* https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png */}
       {/* Post data section */}
       <div className="w-full p-2">
         <div className="flex items-center">
           <Link href={`/r/${subName}`}>
-            <Fragment>
-              <img
-                src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                className="w-6 h-6 mr-1 rounded-full cursor-pointer"
-              />
-              <a className="text-xs font-bold cursor-pointer hover:underline">
-                /r/{subName}
-              </a>
-            </Fragment>
+            <img
+              src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              className="w-6 h-6 mr-1 rounded-full cursor-pointer"
+            />
+          </Link>
+          <Link href={`/r/${subName}`}>
+            <a className="text-xs font-bold cursor-pointer hover:underline">
+              /r/{subName}
+            </a>
           </Link>
           <p className="text-xs text-gray-500">
             <span className="mx-1">•</span>
